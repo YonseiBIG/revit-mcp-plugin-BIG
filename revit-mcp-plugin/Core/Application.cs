@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Autodesk.Revit.UI;
 using System.Reflection;
 using System.Windows.Media.Imaging;
@@ -11,18 +11,18 @@ namespace revit_mcp_plugin.Core
     {
         public Result OnStartup(UIControlledApplication application)
         {
-            RibbonPanel mcpPanel = application.CreateRibbonPanel("Revit MCP Plugin");
+            RibbonPanel mcpPanel = application.CreateRibbonPanel("Revit MCP-BIG");
 
-            PushButtonData pushButtonData = new PushButtonData("ID_EXCMD_TOGGLE_REVIT_MCP", "Revit MCP\r\n Switch",
+            PushButtonData pushButtonData = new PushButtonData("ID_EXCMD_TOGGLE_REVIT_MCP_BIG", "MCP-BIG\r\n Switch",
                 Assembly.GetExecutingAssembly().Location, "revit_mcp_plugin.Core.MCPServiceConnection");
-            pushButtonData.ToolTip = "Open / Close mcp server";
+            pushButtonData.ToolTip = "Open / Close MCP-BIG server";
             pushButtonData.Image = new BitmapImage(new Uri("/revit-mcp-plugin;component/Core/Ressources/icon-16.png", UriKind.RelativeOrAbsolute));
             pushButtonData.LargeImage = new BitmapImage(new Uri("/revit-mcp-plugin;component/Core/Ressources/icon-32.png", UriKind.RelativeOrAbsolute));
             mcpPanel.AddItem(pushButtonData);
 
-            PushButtonData mcp_settings_pushButtonData = new PushButtonData("ID_EXCMD_MCP_SETTINGS", "Settings",
+            PushButtonData mcp_settings_pushButtonData = new PushButtonData("ID_EXCMD_MCP_BIG_SETTINGS", "Settings",
                 Assembly.GetExecutingAssembly().Location, "revit_mcp_plugin.Core.Settings");
-            mcp_settings_pushButtonData.ToolTip = "MCP Settings";
+            mcp_settings_pushButtonData.ToolTip = "MCP-BIG Settings";
             mcp_settings_pushButtonData.Image = new BitmapImage(new Uri("/revit-mcp-plugin;component/Core/Ressources/settings-16.png", UriKind.RelativeOrAbsolute));
             mcp_settings_pushButtonData.LargeImage = new BitmapImage(new Uri("/revit-mcp-plugin;component/Core/Ressources/settings-32.png", UriKind.RelativeOrAbsolute));
             mcpPanel.AddItem(mcp_settings_pushButtonData);
