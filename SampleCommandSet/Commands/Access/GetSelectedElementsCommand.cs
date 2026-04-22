@@ -1,4 +1,4 @@
-﻿using Autodesk.Revit.UI;
+using Autodesk.Revit.UI;
 using Newtonsoft.Json.Linq;
 using revit_mcp_sdk.API.Base;
 using System;
@@ -6,7 +6,7 @@ using System;
 namespace SampleCommandSet.Commands.Access
 {
     /// <summary>
-    /// 获取当前选中元素的命令
+    /// Command to retrieve the currently selected elements.
     /// </summary>
     public class GetSelectedElementsCommand : ExternalEventCommandBase
     {
@@ -23,25 +23,25 @@ namespace SampleCommandSet.Commands.Access
         {
             try
             {
-                // 解析参数
+                // Parse parameters
                 int? limit = parameters?["limit"]?.Value<int>();
 
-                // 设置数量限制
+                // Set the count limit
                 _handler.Limit = limit;
 
-                // 触发外部事件并等待完成
+                // Raise the external event and wait for completion
                 if (RaiseAndWaitForCompletion(15000))
                 {
                     return _handler.ResultElements;
                 }
                 else
                 {
-                    throw new TimeoutException("获取选中元素超时");
+                    throw new TimeoutException("Timed out while retrieving selected elements");
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception($"获取选中元素失败: {ex.Message}");
+                throw new Exception($"Failed to retrieve selected elements: {ex.Message}");
             }
         }
     }

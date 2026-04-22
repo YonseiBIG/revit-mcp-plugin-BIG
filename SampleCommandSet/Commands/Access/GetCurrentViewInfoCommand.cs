@@ -1,4 +1,4 @@
-﻿using Autodesk.Revit.UI;
+using Autodesk.Revit.UI;
 using Newtonsoft.Json.Linq;
 using revit_mcp_sdk.API.Base;
 using System;
@@ -18,14 +18,14 @@ namespace SampleCommandSet.Commands.Access
 
         public override object Execute(JObject parameters, string requestId)
         {
-            // 触发外部事件并等待完成
-            if (RaiseAndWaitForCompletion(10000)) // 10秒超时
+            // Raise the external event and wait for completion
+            if (RaiseAndWaitForCompletion(10000)) // 10-second timeout
             {
                 return _handler.ResultInfo;
             }
             else
             {
-                throw new TimeoutException("获取信息超时");
+                throw new TimeoutException("Timed out while retrieving information");
             }
         }
     }

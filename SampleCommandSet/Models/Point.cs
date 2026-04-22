@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
 namespace SampleCommandSet.Models
 {
     /// <summary>
-    /// 点坐标
+    /// Point coordinate.
     /// </summary>
     public class Point
     {

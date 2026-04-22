@@ -1,23 +1,20 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 
 namespace revit_mcp_plugin.Configuration
 {
     /// <summary>
-    /// <para>服务设置类</para>
-    /// <para>Service settings.</para>
+    /// Service settings.
     /// </summary>
     public class ServiceSettings
     {
         /// <summary>
-        /// <para>日志级别</para>
-        /// <para>Log level.</para>
+        /// Log level.
         /// </summary>
         [JsonProperty("logLevel")]
         public string LogLevel { get; set; } = "Info";
 
         /// <summary>
-        /// <para>socket服务端口</para>
-        /// <para>Socket service port.</para>
+        /// Socket service port.
         /// </summary>
         [JsonProperty("port")]
         public int Port { get; set; } = 8080;

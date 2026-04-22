@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SampleCommandSet.Models
 {
     /// <summary>
-    /// 视图信息数据结构
+    /// Data structure for view information.
     /// </summary>
     public class ViewInfo
     {
